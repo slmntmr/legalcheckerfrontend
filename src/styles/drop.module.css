@@ -1,10 +1,10 @@
 .dropContainer {
   position: fixed; /* Sabit pozisyon */
-  bottom: 0; /* Sayfanın altına sabitle */
+  bottom: 0; /* Ekranın altına hizala */
   left: 0; /* Sol kenardan hizala */
   width: 100%; /* Tam genişlik */
-  height: 80px; /* Yüksekliği belirle */
-  background-color: transparent; /* Arka plan rengini kaldır veya isteğe göre ayarla */
-  z-index: 10; /* Diğer içeriklerin üstünde kalması için */
+  height: 80px; /* Yükseklik */
+  background-color: transparent; /* Şeffaf arka plan */
+  z-index: 10; /* Diğer içeriklerin üstünde kalır */
   overflow: hidden; /* Taşan içerikleri gizle */
 }

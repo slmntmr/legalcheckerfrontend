@@ -8,17 +8,21 @@ export default function CheckUrlForm() {
   const [url, setUrl] = useState("");
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false); // Yeni state: loading
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
     setResult(null);
+    setLoading(true); // Loading başlasın
 
     try {
       const response = await checkUrl(url);
       setResult(response);
     } catch (err) {
       setError("An error occurred while checking the URL.");
+    } finally {
+      setLoading(false); // Loading bitsin
     }
   };
 
@@ -34,7 +38,9 @@ export default function CheckUrlForm() {
           placeholder="https://example.com"
           required
         />
-        <button type="submit">Check</button>
+        <button type="submit" disabled={loading}>
+          {loading ? "Checking..." : "Check"} {/* Buton metni değişiyor */}
+        </button>
       </form>
       {result && (
         <div className={styles.results}>
