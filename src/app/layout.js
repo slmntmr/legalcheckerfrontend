@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import "@/styles/layout.module.css";
 import CheckUrlHeader from "@/components/check-url-header";
 import CheckUrlFooter from "@/components/check-url-footer";
+import Drop from "@/components/Drop";
 
 export const metadata = {
   title: "Legal Checker",
@@ -14,7 +15,8 @@ export default function RootLayout({ children }) {
       <body>
         {/* <CheckUrlHeader /> */}
         <main className="main-content">{children}</main>
-        <CheckUrlFooter />
+        <Drop/>
+        {/* <CheckUrlFooter /> */}
       </body>
     </html>
   );
