@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import styles from "@/styles/check-url-form.module.css";
 import { checkUrl } from "@/services/check-url.service";
@@ -35,13 +37,27 @@ export default function CheckUrlForm() {
         <button type="submit">Check</button>
       </form>
       {result && (
-        <div className={styles.result}>
+        <div className={styles.results}>
           <h3>Analysis Results:</h3>
-          <ul>
-            <li>Cookie Policy: {result.cookiePolicy ? "✅" : "❌"}</li>
-            <li>Privacy Policy: {result.privacyPolicy ? "✅" : "❌"}</li>
-            <li>SSL Validity: {result.ssl ? "✅" : "❌"}</li>
-          </ul>
+          <div className={styles.cardContainer}>
+            {[
+              { label: "Cookie Policy", value: result.cookiePolicy },
+              { label: "Privacy Policy", value: result.privacyPolicy },
+              { label: "Terms of Service", value: result.termsOfService },
+              { label: "SSL Validity", value: result.ssl },
+              { label: "Contact Info", value: result.contactInfo },
+              { label: "Copyright", value: result.copyright },
+              { label: "Brand Info", value: result.brandInfo },
+              { label: "GDPR/KVKK Compliance", value: result.gdprKvkkCompliance },
+            ].map((item, index) => (
+              <div key={index} className={styles.card}>
+                <span className={styles.cardTitle}>{item.label}</span>
+                <span className={styles.cardStatus}>
+                  {item.value ? "✅" : "❌"}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       )}
       {error && <div className={styles.error}>{error}</div>}

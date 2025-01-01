@@ -1,18 +1,23 @@
+/* Tüm ekranı kapsayan genişlik */
 .formContainer {
   margin: 20px auto;
   padding: 20px;
-  max-width: 500px;
-  background: #fff;
-  border: 1px solid #ddd;
+  max-width: 100%; /* Tüm genişlikte görünüm */
+  width: 90%; /* Kenar boşlukları için biraz içeride */
+  background: #d70b0b;
+  border: 1px solid #010000;
   border-radius: 8px;
 }
 
+/* Form başlıkları */
 .formContainer label {
   display: block;
   margin-bottom: 10px;
   font-weight: bold;
+  color: #6e4545;
 }
 
+/* URL giriş alanı */
 .formContainer input {
   width: 100%;
   padding: 10px;
@@ -21,20 +26,67 @@
   border-radius: 4px;
 }
 
+/* Buton */
 .formContainer button {
   padding: 10px 15px;
   background-color: #0070f3;
   color: white;
+  font-size: 16px;
   border: none;
   border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-.result ul {
-  list-style: none;
-  padding: 0;
+/* Sonuç başlığı */
+.results h3 {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #222;
 }
 
-.result ul li {
-  margin-bottom: 8px;
+/* Kartları merkezleme ve genişlik ayarı */
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-between; /* Eşit boşluklu dağıtım */
+  margin-top: 20px;
+}
+
+/* Kart tasarımı */
+.card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  width: calc(25% - 15px); /* Ekranın %25'ini kaplayacak şekilde */
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.cardStatus {
+  font-size: 24px;
+  color: #0070f3;
+}
+
+.cardStatus::before {
+  content: "Status: ";
+  font-size: 16px;
+  font-weight: normal;
+  color: #666;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
   font-size: 16px;
 }

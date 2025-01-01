@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <CheckUrlHeader />
+        {/* <CheckUrlHeader /> */}
         <main className="main-content">{children}</main>
         <CheckUrlFooter />
       </body>

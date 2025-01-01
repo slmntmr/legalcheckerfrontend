@@ -1,8 +1,10 @@
 .main-content {
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%; /* Tüm ekran genişliği */
+  margin: 0; /* Kenar boşluklarını kaldır */
   padding: 20px;
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgb(244, 0, 0);
+  min-height: 100vh; /* Ekranın tamamını kaplasın */
+  box-sizing: border-box; /* Padding dahil olsun */
 }
